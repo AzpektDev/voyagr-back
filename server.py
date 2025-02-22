@@ -38,26 +38,30 @@ def search_flights_route():
     
 @app.route('/select-choice', methods=['POST'])
 def select_choice():
-    data = request.get_json()
-    search_id = data.get("search_id")
-    preferred_flight_index = data.get("preferred_flight_index")
-
-    if not search_id or search_id not in SEARCH_RESULTS_STORE:
-        return jsonify({"error": "Invalid or missing search_id"}), 400
-
-    flights_data = SEARCH_RESULTS_STORE[search_id]
-
     try:
-        selected_flight = flights_data[preferred_flight_index]
-    except (IndexError, TypeError):
-        return jsonify({"error": "Invalid flight index"}), 400
+        data = request.get_json()
+        search_id = data.get("search_id")
+        preferred_flight_index = data.get("preferred_flight_index")
 
-    # Do something with the selected flight, e.g. confirm booking or pass it on to another system
-    # For now, we’ll just return it as a success response
-    return jsonify({
-        "message": "Flight selected successfully",
-        "selected_flight": selected_flight
-    })
+        if not search_id or search_id not in SEARCH_RESULTS_STORE:
+            return jsonify({"error": "Invalid or missing search_id"}), 400
+
+        flights_data = SEARCH_RESULTS_STORE[search_id]
+
+        try:
+            selected_flight = flights_data[preferred_flight_index]
+        except (IndexError, TypeError):
+            return jsonify({"error": "Invalid flight index"}), 400
+
+        # Do something with the selected flight, e.g. confirm booking or pass it on to another system
+        # For now, we’ll just return it as a success response
+        return jsonify({
+            "message": "Flight selected successfully",
+            "selected_flight": selected_flight
+        })
+    except Exception as e:
+        app.logger.error(f"Error in select_choice: {str(e)}")
+        return jsonify({"error": "An unexpected error occurred"}), 500
 
 
 if __name__ == '__main__':
