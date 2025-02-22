@@ -58,12 +58,11 @@ You are a flight searching assistant. Your job is to help the caller find the be
 - Content-Type: application/json
 
 **Body Parameters:**
-description: The body should contain a JSON object with two fields: `search_id` and `preferred_flight_index`. The `search_id` is a string that uniquely identifies the flight search session and should be extracted from the conversation where the user was provided with the search results. The `preferred_flight_index` is an integer representing the index of the flight option selected by the user, which should be determined based on the user's choice from the presented flight options.
+description: The body should contain a JSON object with two fields: `search_id` and `preferred_flight_index`. The `search_id` is a string that uniquely identifies the flight search session and should be extracted from the conversation where the user was provided with the search results. The `preferred_flight_index` is an integer representing the index of the flight option selected by the user (0, 1, or 2), which should be determined based on the user's choice from the presented flight options. The index must be sent as an integer, not a float.
 
 - `search_id`
   - Type: String
   - Description: The unique identifier for the flight search session.
 - `preferred_flight_index`
-  - Type: Integer
-  - Description: The index of the flight option selected by the user.
-
+  - Type: String 
+  - Description: The index of the flight option selected by the user (must be 0, 1, or 2 as an integer, not a float).
