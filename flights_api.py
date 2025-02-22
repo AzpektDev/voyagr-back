@@ -100,6 +100,7 @@ def prepare_flight_search_response(flight_details):
         "temperature": 0.1,
         "max_completion_tokens": 4096,
         "top_p": 0.95,
+        "response_format": { "type": "json_object" },
     }
 
     response = requests.post(GROQ_API_URL, headers=headers, json=payload)
