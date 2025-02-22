@@ -87,7 +87,7 @@ def prepare_flight_search_response(flight_details):
         {
             "role": "system",
             # todo: standardize the response format (use json schema)
-            "content": "You are a flight search API. You will receive flight booking details and should return a consistent JSON response with available flight options. Always return exactly 3 flight options with fixed prices and times, formatted as an array of flight objects. Each flight object should include all connection details if the flight has stops, with each segment containing departure and arrival information, duration, airline details, and flight numbers. For multi-leg journeys, include the total duration and total price for the complete itinerary."
+            "content": "You are a flight search API. You will receive flight booking details and should return a consistent JSON response with available flight options. Always return exactly 3 flight options with fixed prices and times, formatted as an array of flight objects. Each flight object should include all connection details if the flight has stops, with each segment containing departure and arrival information, duration, airline details, and flight numbers. For multi-leg journeys, include the total duration and total price for the complete itinerary. Return the JSON response in a single line without any line breaks or formatting."
         },
         {
             "role": "user",
@@ -105,10 +105,31 @@ def prepare_flight_search_response(flight_details):
     }
 
     response = requests.post(GROQ_API_URL, headers=headers, json=payload)
-    return response.json()["choices"][0]["message"]["content"]  
+    return json.loads(response.json()["choices"][0]["message"]["content"])  
 
 
+def manual_prepare_flight_search_response(flight_details):
+    simplified_flights = []
 
+    for flight in flight_details:
+        simplified_flight = {
+            "flights": [
+                {
+                    "departure_airport": segment["departure_airport"],
+                    "arrival_airport": segment["arrival_airport"],
+                    "duration": segment["duration"],
+                    "airline": segment["airline"],
+                    "flight_number": segment["flight_number"]
+                }
+                for segment in flight["flights"]
+            ],
+            "total_duration": flight["total_duration"],
+            "price": flight["price"],
+            "type": flight["type"]
+        }
+        simplified_flights.append(simplified_flight)
+
+    return simplified_flights
 
 
 if __name__ == "__main__":
@@ -130,7 +151,8 @@ if __name__ == "__main__":
             json.dump(flights, f, indent=4)
 
         # print(flights['best_flights']
-        flight_search_response = prepare_flight_search_response(flights['best_flights'])
+        # flight_search_response = prepare_flight_search_response(flights['best_flights'])
+        flight_search_response = manual_prepare_flight_search_response(flights['best_flights'])
         print(flight_search_response)
 
 

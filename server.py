@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flights_api import search_flights, prepare_flight_search_response
+from flights_api import search_flights, prepare_flight_search_response, manual_prepare_flight_search_response
 import uuid
 
 app = Flask(__name__)
@@ -18,7 +18,8 @@ def search_flights_route():
         flights = search_flights(departure_id, arrival_id, outbound_date, return_date)
 
         # parse and prepare the response with AI
-        flight_search_response = prepare_flight_search_response(flights['best_flights'])
+        # flight_search_response = prepare_flight_search_response(flights['best_flights'])
+        flight_search_response = manual_prepare_flight_search_response(flights['best_flights'])
 
         search_id = str(uuid.uuid4())
 
@@ -35,7 +36,28 @@ def search_flights_route():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
     
+@app.route('/select-choice', methods=['POST'])
+def select_choice():
+    data = request.get_json()
+    search_id = data.get("search_id")
+    preferred_flight_index = data.get("preferred_flight_index")
 
+    if not search_id or search_id not in SEARCH_RESULTS_STORE:
+        return jsonify({"error": "Invalid or missing search_id"}), 400
+
+    flights_data = SEARCH_RESULTS_STORE[search_id]
+
+    try:
+        selected_flight = flights_data[preferred_flight_index]
+    except (IndexError, TypeError):
+        return jsonify({"error": "Invalid flight index"}), 400
+
+    # Do something with the selected flight, e.g. confirm booking or pass it on to another system
+    # For now, we’ll just return it as a success response
+    return jsonify({
+        "message": "Flight selected successfully",
+        "selected_flight": selected_flight
+    })
 
 
 if __name__ == '__main__':
