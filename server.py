@@ -6,9 +6,29 @@ app = Flask(__name__)
 
 SEARCH_RESULTS_STORE = {}
 
+CONVERSATIONS_STORE = {}
+
+@app.route('/open-conversation', methods=['POST'])
+def open_conversation():
+    generated_id = str(uuid.uuid4())
+    CONVERSATIONS_STORE[generated_id] = {}
+    return jsonify({"conversation_id": generated_id})
+
+@app.route('/get-conversation', methods=['GET'] )
+def get_conversation():
+    conversation_id = request.args.get('conversation_id')
+    if not conversation_id or conversation_id not in CONVERSATIONS_STORE:
+        return jsonify({"error": "Invalid or missing conversation_id"}), 400
+
+    return jsonify(CONVERSATIONS_STORE[conversation_id])
+
 @app.route('/search-flights', methods=['GET'])
 def search_flights_route():
     try:
+        conversation_id = request.args.get('conversation_id')
+        if not conversation_id or conversation_id not in CONVERSATIONS_STORE:
+            return jsonify({"error": "Invalid or missing conversation_id"}), 400
+
         departure_id = request.args.get('departure_id')
         arrival_id = request.args.get('arrival_id')
         outbound_date = request.args.get('outbound_date')
@@ -27,6 +47,9 @@ def search_flights_route():
         flight_data = flight_search_response
         SEARCH_RESULTS_STORE[search_id] = flight_data
 
+        # add the search results to the conversation store
+        CONVERSATIONS_STORE[conversation_id]['search_id'] = search_id
+        CONVERSATIONS_STORE[conversation_id]['flights'] = flight_data
 
         return jsonify({
             "search_id": search_id,
@@ -40,6 +63,10 @@ def search_flights_route():
 def select_choice():
     try:
         data = request.get_json()
+        conversation_id = data.get("conversation_id")
+        if not conversation_id or conversation_id not in CONVERSATIONS_STORE:
+            return jsonify({"error": "Invalid or missing conversation_id"}), 400
+
         search_id = data.get("search_id")
         preferred_flight_index = data.get("preferred_flight_index")
         # if it is not an integer, try to convert it to an integer (for some reason the ai wont return a whole integer but a float and the string is only option to get a whole integer)
@@ -55,6 +82,9 @@ def select_choice():
             selected_flight = flights_data[preferred_flight_index]
         except (IndexError, TypeError):
             return jsonify({"error": "Invalid flight index"}), 400
+
+        # add the selected flight to the conversation store
+        CONVERSATIONS_STORE[conversation_id]['selected_flight'] = selected_flight
 
         # Do something with the selected flight, e.g. confirm booking or pass it on to another system
         # For now, we’ll just return it as a success response
