@@ -86,7 +86,8 @@ def prepare_flight_search_response(flight_details):
     conversation_history = [
         {
             "role": "system",
-            "content": "You are a flight search API. You will receive flight booking details and should return a consistent JSON response with available flight options. Always return exactly 3 flight options with fixed prices and times, formatted as an array of flight objects."
+            # todo: standardize the response format (use json schema)
+            "content": "You are a flight search API. You will receive flight booking details and should return a consistent JSON response with available flight options. Always return exactly 3 flight options with fixed prices and times, formatted as an array of flight objects. Each flight object should include all connection details if the flight has stops, with each segment containing departure and arrival information, duration, airline details, and flight numbers. For multi-leg journeys, include the total duration and total price for the complete itinerary."
         },
         {
             "role": "user",
@@ -119,20 +120,21 @@ if __name__ == "__main__":
     
     try:
         flights = search_flights(departure_id, arrival_id, outbound_date, return_date)
+
+        # prettify json
+        print(json.dumps(flights, indent=4))
+
+
+        # save json to file
+        with open("flights.json", "w") as f:
+            json.dump(flights, f, indent=4)
+
         # print(flights['best_flights']
         flight_search_response = prepare_flight_search_response(flights['best_flights'])
         print(flight_search_response)
 
 
         # print(flights)
-
-        # prettify json
-        # print(json.dumps(flights, indent=4))
-
-
-        # save json to file
-    #     with open("flights.json", "w") as f:
-    #         json.dump(flights, f, indent=4)
     except Exception as e:
         print(f"Error: {e}")
 

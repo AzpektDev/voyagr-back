@@ -1,14 +1,14 @@
 {
     "search_metadata": {
-        "id": "67b9fb742c9f294294c623d2",
+        "id": "67ba192ed55fe9eaf5191fb3",
         "status": "Success",
-        "json_endpoint": "https://serpapi.com/searches/6a3b976edf94624e/67b9fb742c9f294294c623d2.json",
-        "created_at": "2025-02-22 16:29:40 UTC",
-        "processed_at": "2025-02-22 16:29:40 UTC",
+        "json_endpoint": "https://serpapi.com/searches/6a3b976edf94624e/67ba192ed55fe9eaf5191fb3.json",
+        "created_at": "2025-02-22 18:36:30 UTC",
+        "processed_at": "2025-02-22 18:36:30 UTC",
         "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoeEgoyMDI1LTAzLTAxagcIARIDV0FXcgcIARIDSkZLGh4SCjIwMjUtMDMtMDVqBwgBEgNKRktyBwgBEgNXQVdCAQFIAXABmAEB&tfu=EgIIAQ",
-        "raw_html_file": "https://serpapi.com/searches/6a3b976edf94624e/67b9fb742c9f294294c623d2.html",
-        "prettify_html_file": "https://serpapi.com/searches/6a3b976edf94624e/67b9fb742c9f294294c623d2.prettify",
-        "total_time_taken": 1.2
+        "raw_html_file": "https://serpapi.com/searches/6a3b976edf94624e/67ba192ed55fe9eaf5191fb3.html",
+        "prettify_html_file": "https://serpapi.com/searches/6a3b976edf94624e/67ba192ed55fe9eaf5191fb3.prettify",
+        "total_time_taken": 0.49
     },
     "search_parameters": {
         "engine": "google_flights",
@@ -22,6 +22,222 @@
         "currency": "USD"
     },
     "best_flights": [
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Warsaw Frederic Chopin",
+                        "id": "WAW",
+                        "time": "2025-03-01 06:30"
+                    },
+                    "arrival_airport": {
+                        "name": "Brussels Airport",
+                        "id": "BRU",
+                        "time": "2025-03-01 08:35"
+                    },
+                    "duration": 125,
+                    "airplane": "Airbus A319",
+                    "airline": "Brussels Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SN.png",
+                    "travel_class": "Economy",
+                    "flight_number": "SN 2560",
+                    "ticket_also_sold_by": [
+                        "United"
+                    ],
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "Carbon emissions estimate: 132 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Brussels Airport",
+                        "id": "BRU",
+                        "time": "2025-03-01 10:35"
+                    },
+                    "arrival_airport": {
+                        "name": "John F. Kennedy International Airport",
+                        "id": "JFK",
+                        "time": "2025-03-01 13:20"
+                    },
+                    "duration": 525,
+                    "airplane": "Airbus A330",
+                    "airline": "Brussels Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SN.png",
+                    "travel_class": "Economy",
+                    "flight_number": "SN 501",
+                    "ticket_also_sold_by": [
+                        "United"
+                    ],
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 405 kg"
+                    ]
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 120,
+                    "name": "Brussels Airport",
+                    "id": "BRU"
+                }
+            ],
+            "total_duration": 770,
+            "carbon_emissions": {
+                "this_flight": 537000,
+                "typical_for_this_route": 484000,
+                "difference_percent": 11
+            },
+            "price": 615,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SN.png",
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3hUVGpJMU5qQjhVMDQxTURFYUN3aXM0QU1RQWhvRFZWTkVPQnh3ck9BRCIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkJSVSIsbnVsbCwiU04iLCIyNTYwIl0sWyJCUlUiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJTTiIsIjUwMSJdXV0="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Warsaw Frederic Chopin",
+                        "id": "WAW",
+                        "time": "2025-03-01 09:45"
+                    },
+                    "arrival_airport": {
+                        "name": "Zurich Airport",
+                        "id": "ZRH",
+                        "time": "2025-03-01 11:50"
+                    },
+                    "duration": 125,
+                    "airplane": "Airbus A220-300 Passenger",
+                    "airline": "SWISS",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LX.png",
+                    "travel_class": "Economy",
+                    "flight_number": "LX 1343",
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "Carbon emissions estimate: 115 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Zurich Airport",
+                        "id": "ZRH",
+                        "time": "2025-03-01 13:15"
+                    },
+                    "arrival_airport": {
+                        "name": "John F. Kennedy International Airport",
+                        "id": "JFK",
+                        "time": "2025-03-01 16:40"
+                    },
+                    "duration": 565,
+                    "airplane": "Airbus A330",
+                    "airline": "SWISS",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LX.png",
+                    "travel_class": "Economy",
+                    "flight_number": "LX 14",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 304 kg"
+                    ]
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 85,
+                    "name": "Zurich Airport",
+                    "id": "ZRH"
+                }
+            ],
+            "total_duration": 775,
+            "carbon_emissions": {
+                "this_flight": 420000,
+                "typical_for_this_route": 484000,
+                "difference_percent": -13
+            },
+            "price": 617,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LX.png",
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3RNV0RFek5ETjhURmd4TkJvTENMYmhBeEFDR2dOVlUwUTRISEMyNFFNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIlpSSCIsbnVsbCwiTFgiLCIxMzQzIl0sWyJaUkgiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJMWCIsIjE0Il1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Warsaw Frederic Chopin",
+                        "id": "WAW",
+                        "time": "2025-03-01 10:05"
+                    },
+                    "arrival_airport": {
+                        "name": "Copenhagen Airport",
+                        "id": "CPH",
+                        "time": "2025-03-01 11:30"
+                    },
+                    "duration": 85,
+                    "airplane": "Canadair RJ 900",
+                    "airline": "Scandinavian Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SK.png",
+                    "travel_class": "Economy",
+                    "flight_number": "SK 752",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Carbon emissions estimate: 103 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Copenhagen Airport",
+                        "id": "CPH",
+                        "time": "2025-03-01 13:00"
+                    },
+                    "arrival_airport": {
+                        "name": "John F. Kennedy International Airport",
+                        "id": "JFK",
+                        "time": "2025-03-01 15:55"
+                    },
+                    "duration": 535,
+                    "airplane": "Airbus A330",
+                    "airline": "Scandinavian Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SK.png",
+                    "travel_class": "Economy",
+                    "flight_number": "SK 915",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 481 kg"
+                    ]
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 90,
+                    "name": "Copenhagen Airport",
+                    "id": "CPH"
+                }
+            ],
+            "total_duration": 710,
+            "carbon_emissions": {
+                "this_flight": 584000,
+                "typical_for_this_route": 484000,
+                "difference_percent": 21
+            },
+            "price": 651,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SK.png",
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3RUU3pjMU1ueFRTemt4TlJvTENQajdBeEFDR2dOVlUwUTRISEQ0K3dNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkNQSCIsbnVsbCwiU0siLCI3NTIiXSxbIkNQSCIsIjIwMjUtMDMtMDEiLCJKRksiLG51bGwsIlNLIiwiOTE1Il1dXQ=="
+        }
+    ],
+    "other_flights": [
         {
             "flights": [
                 {
@@ -100,7 +316,7 @@
             "price": 535,
             "type": "Round trip",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BA.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3RDUVRnME4zeENRVEUzT1JvTENNV2hBeEFDR2dOVlUwUTRISERGb1FNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkxIUiIsbnVsbCwiQkEiLCI4NDciXSxbIkxIUiIsIjIwMjUtMDMtMDEiLCJKRksiLG51bGwsIkJBIiwiMTc5Il1dXQ=="
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3RDUVRnME4zeENRVEUzT1JvTENNV2hBeEFDR2dOVlUwUTRISERGb1FNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkxIUiIsbnVsbCwiQkEiLCI4NDciXSxbIkxIUiIsIjIwMjUtMDMtMDEiLCJKRksiLG51bGwsIkJBIiwiMTc5Il1dXQ=="
         },
         {
             "flights": [
@@ -178,186 +394,7 @@
             "price": 560,
             "type": "Round trip",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3hMVERFek1UUjhTMHcyTkRNYUN3aUZ0UU1RQWhvRFZWTkVPQnh3aGJVRCIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkFNUyIsbnVsbCwiS0wiLCIxMzE0Il0sWyJBTVMiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJLTCIsIjY0MyJdXV0="
-        },
-        {
-            "flights": [
-                {
-                    "departure_airport": {
-                        "name": "Warsaw Frederic Chopin",
-                        "id": "WAW",
-                        "time": "2025-03-01 06:30"
-                    },
-                    "arrival_airport": {
-                        "name": "Brussels Airport",
-                        "id": "BRU",
-                        "time": "2025-03-01 08:35"
-                    },
-                    "duration": 125,
-                    "airplane": "Airbus A319",
-                    "airline": "Brussels Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SN.png",
-                    "travel_class": "Economy",
-                    "flight_number": "SN 2560",
-                    "ticket_also_sold_by": [
-                        "United"
-                    ],
-                    "legroom": "30 in",
-                    "extensions": [
-                        "Average legroom (30 in)",
-                        "Carbon emissions estimate: 132 kg"
-                    ]
-                },
-                {
-                    "departure_airport": {
-                        "name": "Brussels Airport",
-                        "id": "BRU",
-                        "time": "2025-03-01 10:35"
-                    },
-                    "arrival_airport": {
-                        "name": "John F. Kennedy International Airport",
-                        "id": "JFK",
-                        "time": "2025-03-01 13:20"
-                    },
-                    "duration": 525,
-                    "airplane": "Airbus A330",
-                    "airline": "Brussels Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SN.png",
-                    "travel_class": "Economy",
-                    "flight_number": "SN 501",
-                    "ticket_also_sold_by": [
-                        "United"
-                    ],
-                    "legroom": "32 in",
-                    "extensions": [
-                        "Above average legroom (32 in)",
-                        "In-seat USB outlet",
-                        "On-demand video",
-                        "Carbon emissions estimate: 405 kg"
-                    ]
-                }
-            ],
-            "layovers": [
-                {
-                    "duration": 120,
-                    "name": "Brussels Airport",
-                    "id": "BRU"
-                }
-            ],
-            "total_duration": 770,
-            "carbon_emissions": {
-                "this_flight": 537000,
-                "typical_for_this_route": 484000,
-                "difference_percent": 11
-            },
-            "price": 617,
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SN.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3hUVGpJMU5qQjhVMDQxTURFYUN3anM0UU1RQWhvRFZWTkVPQnh3N09FRCIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkJSVSIsbnVsbCwiU04iLCIyNTYwIl0sWyJCUlUiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJTTiIsIjUwMSJdXV0="
-        }
-    ],
-    "other_flights": [
-        {
-            "flights": [
-                {
-                    "departure_airport": {
-                        "name": "Warsaw Frederic Chopin",
-                        "id": "WAW",
-                        "time": "2025-03-01 08:55"
-                    },
-                    "arrival_airport": {
-                        "name": "Helsinki Airport",
-                        "id": "HEL",
-                        "time": "2025-03-01 11:35"
-                    },
-                    "duration": 100,
-                    "airplane": "Embraer 190",
-                    "airline": "Finnair",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AY.png",
-                    "travel_class": "Economy",
-                    "flight_number": "AY 1142",
-                    "legroom": "31 in",
-                    "extensions": [
-                        "Average legroom (31 in)",
-                        "Carbon emissions estimate: 147 kg"
-                    ]
-                },
-                {
-                    "departure_airport": {
-                        "name": "Helsinki Airport",
-                        "id": "HEL",
-                        "time": "2025-03-01 14:00"
-                    },
-                    "arrival_airport": {
-                        "name": "Heathrow Airport",
-                        "id": "LHR",
-                        "time": "2025-03-01 15:15"
-                    },
-                    "duration": 195,
-                    "airplane": "Airbus A320",
-                    "airline": "Finnair",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AY.png",
-                    "travel_class": "Economy",
-                    "flight_number": "AY 1335",
-                    "legroom": "31 in",
-                    "extensions": [
-                        "Average legroom (31 in)",
-                        "Wi-Fi for a fee",
-                        "Carbon emissions estimate: 186 kg"
-                    ]
-                },
-                {
-                    "departure_airport": {
-                        "name": "Heathrow Airport",
-                        "id": "LHR",
-                        "time": "2025-03-01 17:05"
-                    },
-                    "arrival_airport": {
-                        "name": "John F. Kennedy International Airport",
-                        "id": "JFK",
-                        "time": "2025-03-01 20:10"
-                    },
-                    "duration": 485,
-                    "airplane": "Boeing 777",
-                    "airline": "American",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
-                    "travel_class": "Economy",
-                    "flight_number": "AA 107",
-                    "ticket_also_sold_by": [
-                        "Finnair"
-                    ],
-                    "legroom": "31 in",
-                    "extensions": [
-                        "Average legroom (31 in)",
-                        "Wi-Fi for a fee",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 356 kg"
-                    ]
-                }
-            ],
-            "layovers": [
-                {
-                    "duration": 145,
-                    "name": "Helsinki Airport",
-                    "id": "HEL"
-                },
-                {
-                    "duration": 110,
-                    "name": "Heathrow Airport",
-                    "id": "LHR"
-                }
-            ],
-            "total_duration": 1035,
-            "carbon_emissions": {
-                "this_flight": 691000,
-                "typical_for_this_route": 484000,
-                "difference_percent": 43
-            },
-            "price": 544,
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFaE5CV1RFeE5ESjhRVmt4TXpNMWZFRkJNVEEzR2dzSW9LZ0RFQUlhQTFWVFJEZ2NjS0NvQXc9PSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkhFTCIsbnVsbCwiQVkiLCIxMTQyIl0sWyJIRUwiLCIyMDI1LTAzLTAxIiwiTEhSIixudWxsLCJBWSIsIjEzMzUiXSxbIkxIUiIsIjIwMjUtMDMtMDEiLCJKRksiLG51bGwsIkFBIiwiMTA3Il1dXQ=="
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3hMVERFek1UUjhTMHcyTkRNYUN3aUZ0UU1RQWhvRFZWTkVPQnh3aGJVRCIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkFNUyIsbnVsbCwiS0wiLCIxMzE0Il0sWyJBTVMiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJLTCIsIjY0MyJdXV0="
         },
         {
             "flights": [
@@ -435,7 +472,7 @@
             "price": 565,
             "type": "Round trip",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AF.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3RCUmpFeE5EZDhRVVl4TWhvTENPSzRBeEFDR2dOVlUwUTRISERpdUFNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkNERyIsbnVsbCwiQUYiLCIxMTQ3Il0sWyJDREciLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJBRiIsIjEyIl1dXQ=="
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3RCUmpFeE5EZDhRVVl4TWhvTENPSzRBeEFDR2dOVlUwUTRISERpdUFNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkNERyIsbnVsbCwiQUYiLCIxMTQ3Il0sWyJDREciLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJBRiIsIjEyIl1dXQ=="
         },
         {
             "flights": [
@@ -513,7 +550,7 @@
             "price": 598,
             "type": "Round trip",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BA.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3RDUVRnME4zeENRVEV4TXhvTENNSFNBeEFDR2dOVlUwUTRISERCMGdNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkxIUiIsbnVsbCwiQkEiLCI4NDciXSxbIkxIUiIsIjIwMjUtMDMtMDEiLCJKRksiLG51bGwsIkJBIiwiMTEzIl1dXQ=="
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3RDUVRnME4zeENRVEV4TXhvTENNSFNBeEFDR2dOVlUwUTRISERCMGdNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkxIUiIsbnVsbCwiQkEiLCI4NDciXSxbIkxIUiIsIjIwMjUtMDMtMDEiLCJKRksiLG51bGwsIkJBIiwiMTEzIl1dXQ=="
         },
         {
             "flights": [
@@ -590,7 +627,7 @@
             "price": 609,
             "type": "Round trip",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3hNU0RFMk1UZDhURWcwTVRBYUN3amUyd01RQWhvRFZWTkVPQnh3M3RzRCIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIk1VQyIsbnVsbCwiTEgiLCIxNjE3Il0sWyJNVUMiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJMSCIsIjQxMCJdXV0="
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3hNU0RFMk1UZDhURWcwTVRBYUN3amUyd01RQWhvRFZWTkVPQnh3M3RzRCIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIk1VQyIsbnVsbCwiTEgiLCIxNjE3Il0sWyJNVUMiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJMSCIsIjQxMCJdXV0="
         },
         {
             "flights": [
@@ -667,7 +704,7 @@
             "price": 610,
             "type": "Round trip",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3hNU0RFek5EbDhURWcwTURRYUN3aTQzQU1RQWhvRFZWTkVPQnh3dU53RCIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkZSQSIsbnVsbCwiTEgiLCIxMzQ5Il0sWyJGUkEiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJMSCIsIjQwNCJdXV0="
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3hNU0RFek5EbDhURWcwTURRYUN3aTQzQU1RQWhvRFZWTkVPQnh3dU53RCIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkZSQSIsbnVsbCwiTEgiLCIxMzQ5Il0sWyJGUkEiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJMSCIsIjQwNCJdXV0="
         },
         {
             "flights": [
@@ -736,77 +773,7 @@
             "price": 616,
             "type": "Round trip",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AY.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3RCV1RFeE5EUjhRVmt4TlJvTENNM2dBeEFDR2dOVlUwUTRISERONEFNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkhFTCIsbnVsbCwiQVkiLCIxMTQ0Il0sWyJIRUwiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJBWSIsIjE1Il1dXQ=="
-        },
-        {
-            "flights": [
-                {
-                    "departure_airport": {
-                        "name": "Warsaw Frederic Chopin",
-                        "id": "WAW",
-                        "time": "2025-03-01 09:45"
-                    },
-                    "arrival_airport": {
-                        "name": "Zurich Airport",
-                        "id": "ZRH",
-                        "time": "2025-03-01 11:50"
-                    },
-                    "duration": 125,
-                    "airplane": "Airbus A220-300 Passenger",
-                    "airline": "SWISS",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LX.png",
-                    "travel_class": "Economy",
-                    "flight_number": "LX 1343",
-                    "legroom": "30 in",
-                    "extensions": [
-                        "Average legroom (30 in)",
-                        "Carbon emissions estimate: 115 kg"
-                    ]
-                },
-                {
-                    "departure_airport": {
-                        "name": "Zurich Airport",
-                        "id": "ZRH",
-                        "time": "2025-03-01 13:15"
-                    },
-                    "arrival_airport": {
-                        "name": "John F. Kennedy International Airport",
-                        "id": "JFK",
-                        "time": "2025-03-01 16:40"
-                    },
-                    "duration": 565,
-                    "airplane": "Airbus A330",
-                    "airline": "SWISS",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LX.png",
-                    "travel_class": "Economy",
-                    "flight_number": "LX 14",
-                    "legroom": "31 in",
-                    "extensions": [
-                        "Average legroom (31 in)",
-                        "Wi-Fi for a fee",
-                        "In-seat USB outlet",
-                        "On-demand video",
-                        "Carbon emissions estimate: 304 kg"
-                    ]
-                }
-            ],
-            "layovers": [
-                {
-                    "duration": 85,
-                    "name": "Zurich Airport",
-                    "id": "ZRH"
-                }
-            ],
-            "total_duration": 775,
-            "carbon_emissions": {
-                "this_flight": 420000,
-                "typical_for_this_route": 484000,
-                "difference_percent": -13
-            },
-            "price": 617,
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LX.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3RNV0RFek5ETjhURmd4TkJvTENMYmhBeEFDR2dOVlUwUTRISEMyNFFNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIlpSSCIsbnVsbCwiTFgiLCIxMzQzIl0sWyJaUkgiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJMWCIsIjE0Il1dXQ=="
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3RCV1RFeE5EUjhRVmt4TlJvTENNM2dBeEFDR2dOVlUwUTRISERONEFNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkhFTCIsbnVsbCwiQVkiLCIxMTQ0Il0sWyJIRUwiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJBWSIsIjE1Il1dXQ=="
         },
         {
             "flights": [
@@ -883,7 +850,7 @@
             "price": 624,
             "type": "Round trip",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3hNU0RFek5UTjhURWcwTURBYUN3aUc1d01RQWhvRFZWTkVPQnh3aHVjRCIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkZSQSIsbnVsbCwiTEgiLCIxMzUzIl0sWyJGUkEiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJMSCIsIjQwMCJdXV0="
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3hNU0RFek5UTjhURWcwTURBYUN3aUc1d01RQWhvRFZWTkVPQnh3aHVjRCIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkZSQSIsbnVsbCwiTEgiLCIxMzUzIl0sWyJGUkEiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJMSCIsIjQwMCJdXV0="
         },
         {
             "flights": [
@@ -891,68 +858,76 @@
                     "departure_airport": {
                         "name": "Warsaw Frederic Chopin",
                         "id": "WAW",
-                        "time": "2025-03-01 10:05"
+                        "time": "2025-03-01 06:05"
                     },
                     "arrival_airport": {
-                        "name": "Copenhagen Airport",
-                        "id": "CPH",
-                        "time": "2025-03-01 11:30"
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2025-03-01 08:15"
                     },
-                    "duration": 85,
-                    "airplane": "Canadair RJ 900",
-                    "airline": "Scandinavian Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SK.png",
+                    "duration": 130,
+                    "airplane": "Boeing 737",
+                    "airline": "KLM",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
                     "travel_class": "Economy",
-                    "flight_number": "SK 752",
-                    "legroom": "31 in",
+                    "flight_number": "KL 1310",
+                    "ticket_also_sold_by": [
+                        "Delta"
+                    ],
+                    "legroom": "30 in",
                     "extensions": [
-                        "Average legroom (31 in)",
-                        "Carbon emissions estimate: 103 kg"
+                        "Average legroom (30 in)",
+                        "In-seat USB outlet",
+                        "Carbon emissions estimate: 88 kg"
                     ]
                 },
                 {
                     "departure_airport": {
-                        "name": "Copenhagen Airport",
-                        "id": "CPH",
-                        "time": "2025-03-01 13:00"
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2025-03-01 10:45"
                     },
                     "arrival_airport": {
                         "name": "John F. Kennedy International Airport",
                         "id": "JFK",
-                        "time": "2025-03-01 15:55"
+                        "time": "2025-03-01 13:07"
                     },
-                    "duration": 535,
-                    "airplane": "Airbus A330",
-                    "airline": "Scandinavian Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SK.png",
+                    "duration": 502,
+                    "airplane": "Airbus A330-900neo",
+                    "airline": "Delta",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
                     "travel_class": "Economy",
-                    "flight_number": "SK 915",
+                    "flight_number": "DL 49",
+                    "ticket_also_sold_by": [
+                        "KLM"
+                    ],
                     "legroom": "31 in",
                     "extensions": [
                         "Average legroom (31 in)",
+                        "Free Wi-Fi",
                         "In-seat power & USB outlets",
                         "On-demand video",
-                        "Carbon emissions estimate: 481 kg"
+                        "Carbon emissions estimate: 305 kg"
                     ]
                 }
             ],
             "layovers": [
                 {
-                    "duration": 90,
-                    "name": "Copenhagen Airport",
-                    "id": "CPH"
+                    "duration": 150,
+                    "name": "Amsterdam Airport Schiphol",
+                    "id": "AMS"
                 }
             ],
-            "total_duration": 710,
+            "total_duration": 782,
             "carbon_emissions": {
-                "this_flight": 584000,
+                "this_flight": 393000,
                 "typical_for_this_route": 484000,
-                "difference_percent": 21
+                "difference_percent": -19
             },
-            "price": 651,
+            "price": 659,
             "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SK.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ3RUU3pjMU1ueFRTemt4TlJvTENQajdBeEFDR2dOVlUwUTRISEQ0K3dNPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkNQSCIsbnVsbCwiU0siLCI3NTIiXSxbIkNQSCIsIjIwMjUtMDMtMDEiLCJKRksiLG51bGwsIlNLIiwiOTE1Il1dXQ=="
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ3RMVERFek1UQjhSRXcwT1JvTENMYUNCQkFDR2dOVlUwUTRISEMyZ2dRPSIsW1siV0FXIiwiMjAyNS0wMy0wMSIsIkFNUyIsbnVsbCwiS0wiLCIxMzEwIl0sWyJBTVMiLCIyMDI1LTAzLTAxIiwiSkZLIixudWxsLCJETCIsIjQ5Il1dXQ=="
         },
         {
             "flights": [
@@ -991,7 +966,7 @@
             "price": 960,
             "type": "Round trip",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LO.png",
-            "departure_token": "WyJDalJJZHpkTk5ISm9hMVZmVkVWQlJVWlRSM2RDUnkwdExTMHRMUzB0YjJ0aVpIRXlPRUZCUVVGQlIyVTFMVE5SVDJ4cmRDMUJFZ1JNVHpJMkdnc0lvdTBGRUFJYUExVlRSRGdjY0tMdEJRPT0iLFtbIldBVyIsIjIwMjUtMDMtMDEiLCJKRksiLG51bGwsIkxPIiwiMjYiXV1d"
+            "departure_token": "WyJDalJJWDIxNWJWOTVTa2xmY2tWQlJrcENjR2RDUnkwdExTMHRMUzB0TFhsc2FYUXhNa0ZCUVVGQlIyVTJSMU0wUlRZM2QzZEJFZ1JNVHpJMkdnc0lvdTBGRUFJYUExVlRSRGdjY0tMdEJRPT0iLFtbIldBVyIsIjIwMjUtMDMtMDEiLCJKRksiLG51bGwsIkxPIiwiMjYiXV1d"
         }
     ],
     "price_insights": {
