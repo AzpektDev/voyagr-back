@@ -3,23 +3,6 @@ from flights_api import search_flights, prepare_flight_search_response
 
 app = Flask(__name__)
 
-@app.route('/log-name', methods=['POST'])
-def log_name():
-    try:
-        data = request.get_json()
-        name = data.get('name')
-        
-        if not name:
-            return jsonify({'error': 'No name provided'}), 400
-            
-        print(f"Received name from ElevenLabs agent: {name}")
-        
-        return jsonify({'success': True, 'message': f'Logged name: {name}'})
-        
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-    
-
 @app.route('/search-flights', methods=['GET'])
 def search_flights_route():
     try:
