@@ -38,6 +38,11 @@ def search_flights_route():
     
 @app.route('/select-choice', methods=['POST'])
 def select_choice():
+    print("Received select-choice request")
+    print(f"Request data: {request.get_data()}")
+    print(f"Request JSON: {request.get_json()}")
+    print(f"Current search store: {SEARCH_RESULTS_STORE}")
+
     try:
         data = request.get_json()
         search_id = data.get("search_id")
