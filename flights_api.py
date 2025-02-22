@@ -56,7 +56,7 @@ def search_flights(
         "currency": currency,
         "hl": language,
         "gl": country,
-        "api_key": API_KEYS[0]  # Using first API key
+        "api_key": API_KEYS[0]  # TODO: rotate through keys
     }
 
     # Add return date if provided
