@@ -6,11 +6,13 @@ import uuid
 import json  # Import the json module
 from flights_api import search_flights, manual_prepare_flight_search_response
 from dotenv import load_dotenv  # Import load_dotenv
+from flask_cors import CORS  # Import CORS
 
 # Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for the entire app
 
 try:
     connection = psycopg2.connect(
