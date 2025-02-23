@@ -7,13 +7,13 @@ import json  # Import the json module
 from flights_api import search_flights, manual_prepare_flight_search_response
 from hotels_api import search_hotels
 from dotenv import load_dotenv  # Import load_dotenv
-from flask_cors import CORS  # Import CORS
+# from flask_cors import CORS  # Import CORS
 
 # Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for the entire app
+# CORS(app)  # Enable CORS for the entire app
 
 try:
     connection = psycopg2.connect(
@@ -122,18 +122,29 @@ try:
             except (IndexError, TypeError):
                 return jsonify({"error": "Invalid flight index"}), 400
 
-            # Convert the selected flight dictionary to a JSON string
-            selected_flight_json = json.dumps(selected_flight)
+            # Parse the selected flight JSON string back to a dict if it's a string
+            if isinstance(selected_flight, str):
+                selected_flight_dict = json.loads(selected_flight)
+            else:
+                selected_flight_dict = selected_flight
 
             # Update the selected flights in the conversation
             cursor.execute("SELECT selected_flight FROM conversations WHERE id = %s", (conversation_id,))
-            current_selected_flights = cursor.fetchone()[0] or []
+            result = cursor.fetchone()
+            current_selected_flights = result[0] if result[0] else []
+
+            # Ensure current_selected_flights is a list
+            if not isinstance(current_selected_flights, list):
+                current_selected_flights = []
 
             # Append the new selected flight
-            current_selected_flights.append(selected_flight_json)
+            current_selected_flights.append(selected_flight_dict)
+
+            # Convert to JSON string before updating
+            current_selected_flights_json = json.dumps(current_selected_flights)
 
             # Update the selected flights in the conversation
-            cursor.execute("UPDATE conversations SET selected_flight = %s WHERE id = %s", (json.dumps(current_selected_flights), conversation_id))
+            cursor.execute("UPDATE conversations SET selected_flight = %s WHERE id = %s", (current_selected_flights_json, conversation_id))
             connection.commit()
 
             # Check if the update was successful
