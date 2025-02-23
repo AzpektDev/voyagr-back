@@ -154,6 +154,10 @@ try:
                 app.logger.error("Failed to update the selected flights in the database.")
                 return jsonify({"error": "Failed to update the selected flights in the database."}), 500
 
+            # delete all flights from the database
+            cursor.execute("DELETE FROM flights WHERE conversation_id = %s", (conversation_id,))
+            connection.commit()
+
             return jsonify({
                 "message": "Flight selected successfully",
                 "selected_flights": current_selected_flights
