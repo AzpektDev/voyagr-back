@@ -6,6 +6,8 @@ import uuid
 import json  # Import the json module
 from flights_api import search_flights, manual_prepare_flight_search_response
 from hotels_api import search_hotels, parse_hotels
+from images_api import search_city_image
+from activities_api import search_activities
 from dotenv import load_dotenv  # Import load_dotenv
 from flask_cors import CORS  # Import CORS
 
@@ -14,6 +16,9 @@ load_dotenv()
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for the entire app
+
+GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
+GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 
 try:
     connection = psycopg2.connect(
@@ -53,6 +58,17 @@ try:
     CREATE TABLE IF NOT EXISTS transcripts (
         conversation_id UUID,
         transcript JSONB,
+        FOREIGN KEY (conversation_id) REFERENCES conversations (id)
+    );
+    """)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS summaries (
+        conversation_id UUID,
+        title TEXT,
+        content TEXT,
+        flight_data JSONB,
+        hotel_data JSONB,
+        cover_image_url TEXT,
         FOREIGN KEY (conversation_id) REFERENCES conversations (id)
     );
     """)
@@ -313,6 +329,55 @@ try:
         except Exception as e:
             app.logger.error(f"Error in select_hotel: {str(e)}")
             return jsonify({"error": "An unexpected error occurred"}), 500
+
+
+    @app.route('/summarize', methods=['POST'])
+    def summarize():
+        # write the summarize endpoint. When beeing provided with a conversation ID it should pass to an ai the transcript, the selected flights and the selected hotels and ask it to create a summary of the conversation.
+        conversation_id = request.args.get('conversation_id')
+        if not conversation_id:
+            return jsonify({"error": "Invalid or missing conversation_id"}), 400
+
+        # get the transcript
+        cursor.execute("SELECT transcript FROM transcripts WHERE conversation_id = %s", (conversation_id,))
+        transcript = cursor.fetchone()
+        transcript = transcript[0] if transcript[0] else []
+
+        # get the selected flights
+        cursor.execute("SELECT selected_flight FROM conversations WHERE id = %s", (conversation_id,))
+        selected_flight = cursor.fetchone()
+        selected_flight = selected_flight[0] if selected_flight[0] else []
+
+        # get the selected hotels
+        cursor.execute("SELECT selected_hotel FROM conversations WHERE id = %s", (conversation_id,))
+        selected_hotel = cursor.fetchone()
+        selected_hotel = selected_hotel[0] if selected_hotel[0] else []
+        
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {GROQ_API_KEY}"
+        }
+
+        conversation_history = [
+            {
+                "role": "system",
+                "content": "You are an AI that receives a transcript, selected flights and selected hotels and asks you to create a summary of the conversation. The summary should be in a natural language and should be concise and to the point. It should be 2-3 sentences long."
+            
+        ]
+        
+        payload = {
+
+            "messages": conversation_history,
+            "model": "llama-3.3-70b-versatile",
+            "temperature": 0.6,
+            "max_completion_tokens": 4096,
+            "top_p": 0.95,
+        }
+
+        response = requests.post(GROQ_API_URL, 
+                            headers=headers,
+                            json=payload)
+        return response
 
     if __name__ == '__main__':
         app.run(host='0.0.0.0', port=5001)

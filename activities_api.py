@@ -55,6 +55,6 @@ def search_activities(city):
         return []
 
 if __name__ == "__main__": 
-    activities = search_activities("Cracow")
+    activities = search_activities("New York")
     print(activities)
 
