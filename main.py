@@ -77,10 +77,12 @@ try:
             departure_id = request.args.get('departure_id')
             arrival_id = request.args.get('arrival_id')
             outbound_date = request.args.get('outbound_date')
-            return_date = request.args.get('return_date')
+
+            # Clear existing flights for the conversation
+            cursor.execute("DELETE FROM flights WHERE conversation_id = %s", (conversation_id,))
 
             # search for flights (using google flights api)
-            flights = search_flights(departure_id, arrival_id, outbound_date, return_date)
+            flights = search_flights(departure_id, arrival_id, outbound_date)
 
             # parse and prepare the response with AI
             flight_search_response = manual_prepare_flight_search_response(flights['best_flights'])
@@ -123,20 +125,27 @@ try:
             # Convert the selected flight dictionary to a JSON string
             selected_flight_json = json.dumps(selected_flight)
 
-            # Update the selected flight in the conversation
-            cursor.execute("UPDATE conversations SET selected_flight = %s WHERE id = %s", (selected_flight_json, conversation_id))
+            # Update the selected flights in the conversation
+            cursor.execute("SELECT selected_flight FROM conversations WHERE id = %s", (conversation_id,))
+            current_selected_flights = cursor.fetchone()[0] or []
+
+            # Append the new selected flight
+            current_selected_flights.append(selected_flight_json)
+
+            # Update the selected flights in the conversation
+            cursor.execute("UPDATE conversations SET selected_flight = %s WHERE id = %s", (json.dumps(current_selected_flights), conversation_id))
             connection.commit()
 
             # Check if the update was successful
             cursor.execute("SELECT selected_flight FROM conversations WHERE id = %s", (conversation_id,))
-            updated_flight = cursor.fetchone()
-            if updated_flight is None:
-                app.logger.error("Failed to update the selected flight in the database.")
-                return jsonify({"error": "Failed to update the selected flight in the database."}), 500
+            updated_flights = cursor.fetchone()
+            if updated_flights is None:
+                app.logger.error("Failed to update the selected flights in the database.")
+                return jsonify({"error": "Failed to update the selected flights in the database."}), 500
 
             return jsonify({
                 "message": "Flight selected successfully",
-                "selected_flight": selected_flight
+                "selected_flights": current_selected_flights
             })
         except Exception as e:
             app.logger.error(f"Error in select_choice: {str(e)}")
