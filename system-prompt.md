@@ -96,14 +96,5 @@ description: The body should contain a JSON object with two fields: `search_id` 
 - `children`
   - Type: Integer
   - Description: The number of children staying (default is 0).
-- `currency`
-  - Type: String
-  - Description: The currency code for the search (default is USD).
-- `language`
-  - Type: String
-  - Description: The language code for the search (default is en).
-- `country`
-  - Type: String
-  - Description: The country code for the search (default is us).
 
 **Body:** None

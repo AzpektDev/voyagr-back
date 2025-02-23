@@ -148,9 +148,12 @@ try:
         query = request.args.get('query')
         check_in_date = request.args.get('check_in_date')
         check_out_date = request.args.get('check_out_date')
+        adults = request.args.get('adults')
+        children = request.args.get('children')
+
 
         # search for hotels (using google flights api)
-        hotels = search_hotels(query, check_in_date, check_out_date)
+        hotels = search_hotels(query, check_in_date, check_out_date, adults, children)
 
 
         return jsonify({
