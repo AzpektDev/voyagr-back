@@ -65,7 +65,7 @@ try:
         flights = cursor.fetchall()
         flights = [flight[0] for flight in flights]
 
-        return jsonify({"selected_flight": conversation[0], "flights": flights})
+        return jsonify({"selected_flights": conversation[0], "flights": flights})
 
     @app.route('/search-flights', methods=['GET'])
     def search_flights_route():
