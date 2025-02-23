@@ -78,6 +78,9 @@ description: The body should contain a JSON object with two fields: `search_id` 
 **Headers:** None
 
 **Query Parameters:**
+- `conversation_id`
+  - Type: String
+  - Description: The unique identifier for the conversation.
 - `query`
   - Type: String
   - Description: The search query for hotels, typically a city or location name.
