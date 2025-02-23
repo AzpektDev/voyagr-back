@@ -106,8 +106,8 @@ try:
         transcript = data.get("transcript")
 
         print(transcript)
-        # cursor.execute("INSERT INTO transcripts (conversation_id, transcript) VALUES (%s, %s)", (conversation_id, transcript))
-        # connection.commit()
+        cursor.execute("INSERT INTO transcripts (conversation_id, transcript) VALUES (%s, %s)", (conversation_id, transcript))
+        connection.commit()
 
         return jsonify({"message": "Transcript saved successfully"})    
         
