@@ -49,7 +49,15 @@ try:
         FOREIGN KEY (conversation_id) REFERENCES conversations (id)
     );
     """)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS transcripts (
+        conversation_id UUID,
+        transcript JSONB,
+        FOREIGN KEY (conversation_id) REFERENCES conversations (id)
+    );
+    """)
     connection.commit()
+
 
     @app.route('/open-conversation', methods=['POST'])
     def open_conversation():
@@ -82,6 +90,27 @@ try:
         selected_hotel = selected_hotel[0] if selected_hotel[0] else []
 
         return jsonify({"selected_flights": conversation[0], "flights": flights, "hotels": hotels, "selected_hotel": selected_hotel})
+
+    @app.route('/transcript', methods=['POST'])
+    def transcript():
+        data = request.get_json()
+        
+        conversation_id = data.get("conversation_id")
+        if not conversation_id:
+            return jsonify({"error": "Invalid or missing conversation_id"}), 400
+        cursor.execute("SELECT id FROM conversations WHERE id = %s", (conversation_id,))
+        conversation = cursor.fetchone()
+        if not conversation:
+            return jsonify({"error": "Invalid or missing conversation_id"}), 400
+
+        transcript = data.get("transcript")
+
+        print(transcript)
+        # cursor.execute("INSERT INTO transcripts (conversation_id, transcript) VALUES (%s, %s)", (conversation_id, transcript))
+        # connection.commit()
+
+        return jsonify({"message": "Transcript saved successfully"})    
+        
 
     @app.route('/search-flights', methods=['GET'])
     def search_flights_route():
