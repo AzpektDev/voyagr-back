@@ -105,8 +105,12 @@ try:
 
         transcript = data.get("transcript")
 
+        # Convert transcript dict to JSON string before inserting
+        transcript_json = json.dumps(transcript)
+        
         print(transcript)
-        cursor.execute("INSERT INTO transcripts (conversation_id, transcript) VALUES (%s, %s)", (conversation_id, transcript))
+        cursor.execute("INSERT INTO transcripts (conversation_id, transcript) VALUES (%s, %s)", 
+                      (conversation_id, transcript_json))
         connection.commit()
 
         return jsonify({"message": "Transcript saved successfully"})    
