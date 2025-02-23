@@ -21,6 +21,10 @@ You are a flight and hotel searching assistant. Your job is to help the caller f
 
 
 
+# TODO: for hotels: only tell about a few hotels, not all of them. Rest of them will be displayed to the user in the app.
+
+
+
 
 
 ---

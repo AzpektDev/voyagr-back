@@ -74,6 +74,25 @@ def search_hotels(
     return results
 
 
+def parse_hotels(hotels):
+  hotels = hotels["properties"]
+  
+  for hotel in hotels:
+    rate_per_night = hotel.get("rate_per_night", {})
+    total_rate = hotel.get("total_rate", {})
+    
+    hotel["price"] = {
+        "per_night": rate_per_night.get("lowest"),
+        "per_night_value": rate_per_night.get("extracted_lowest"),
+        "total": total_rate.get("lowest"),
+        "total_value": total_rate.get("extracted_lowest")
+    }
+    
+    hotel.pop("rate_per_night", None)
+    hotel.pop("total_rate", None)
+
+  return hotels 
+
 if __name__ == "__main__":
     # Example usage
     query = "Hotels in New York"
