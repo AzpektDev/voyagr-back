@@ -5,6 +5,7 @@ from flask import Flask, request, jsonify
 import uuid
 import json  # Import the json module
 from flights_api import search_flights, manual_prepare_flight_search_response
+from hotels_api import search_hotels
 from dotenv import load_dotenv  # Import load_dotenv
 from flask_cors import CORS  # Import CORS
 
@@ -98,8 +99,8 @@ try:
         except Exception as e:
             return jsonify({'error': str(e)}), 500
 
-    @app.route('/select-choice', methods=['POST'])
-    def select_choice():
+    @app.route('/select-flight', methods=['POST'])
+    def select_flight():
         try:
             data = request.get_json()
             conversation_id = data.get("conversation_id")
@@ -140,6 +141,25 @@ try:
         except Exception as e:
             app.logger.error(f"Error in select_choice: {str(e)}")
             return jsonify({"error": "An unexpected error occurred"}), 500
+
+    @app.route('/search-hotels', methods=['GET'])
+    def search_hotels_route():
+        # for now dont use conversation_id
+        query = request.args.get('query')
+        check_in_date = request.args.get('check_in_date')
+        check_out_date = request.args.get('check_out_date')
+
+        # search for hotels (using google flights api)
+        hotels = search_hotels(query, check_in_date, check_out_date)
+
+
+        return jsonify({
+            "hotels": hotels
+        })
+
+        
+    
+
 
     if __name__ == '__main__':
         app.run(host='0.0.0.0', port=5001)
